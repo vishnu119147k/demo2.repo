@@ -1,0 +1,33 @@
+<html>
+<script type=text/javascript src=2.js>
+</script>
+<body onload=sc()>
+</body>
+</html>
+javascript code 2.js:
+function sc() {
+ var rng = prompt('Enter the range :');
+ 
+ var res = rng.split("-");
+ if (res.length !== 2) {
+ alert("Invalid range");
+ return;
+ }
+ var first = parseInt(res[0]);
+ var second = parseInt(res[1]);
+ 
+ if (first > second) {
+ alert("Invalid range");
+ return;
+ }
+ 
+ var str = "<table 
+border='2'><tr><th>Number</th><th>Square</th><th>Cube</th></tr>";
+ for (var i = first; i <= second; i++) {
+ str += "<tr><td>" + i + "</td><td>" + (i * i) + "</td><td>" + (i * i * i) + 
+"</td></tr>";
+ }
+ 
+ str += "</table>";
+ document.write(str);
+}
